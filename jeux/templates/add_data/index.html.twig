@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container mt-5">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Nombre de joueur min</th>
+        <th scope="col">Nombre de joueur max</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    {% for game in games %}
+
+      <tr class="table-active">
+        <td>{{game.id}}</td>
+        <td>{{game.title}}</td>
+        <td>{{game.MinPlayers}}</td>
+        <td>{{game.MaxPlayer}}</td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  {% for message in app.flashes('gameSuccess') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+</div>
+
+<div class="container">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Email</th>
+        <th scope="col">Pseudo du joueur</th>
+      </tr>
+    </thead>
+
+    {#<tbody>
+    {% for player in players %}
+
+      <tr class="table-active">
+        <td>{{player.id}}</td>
+        <td>{{player.email}}</td>
+        <td>{{player.nickname}}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>#}
+
+  </table>
+  {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+    {% endfor %}
+</div>
+{% endblock body %}

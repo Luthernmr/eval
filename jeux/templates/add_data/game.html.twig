@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% form_theme formGame 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+<div class="container center mt-5">
+    <h1>ajouter les données</h1> 
+
+{{ form_start(formGame)}}
+
+
+{{ form_row(formGame.title) }}
+{{ form_row(formGame.MinPlayers) }}
+{{ form_row(formGame.MaxPlayer) }}
+
+
+    {{ form(formGame) }}
+</div>
+
+    
+{% endblock body %}

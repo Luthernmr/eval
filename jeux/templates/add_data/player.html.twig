@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% form_theme formPlayer 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+<div class="container center mt-5">
+    <h1>ajouter un joueur</h1> 
+
+
+<div class="container center mt-5">
+    {{ form_start(formPlayer)}}
+    
+    
+    {{ form_row(formPlayer.email) }}
+    {{ form_row(formPlayer.nickname) }}
+    {{ form(formPlayer) }}
+    
+    </div>
+    
+    
+{% endblock body %}
